@@ -1,0 +1,87 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: "Times New Roman", Times, serif; /* Change the font to Times New Roman */
+}
+
+.main-container {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+}
+
+h2 {
+    color: white;
+}
+
+.languages ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.languages li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.lexicon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#lexicon-list {
+    width: 100%;
+    max-width: 800px; /* Set a max-width if needed */
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding: 10px;
+    margin: 0 auto; /* Center the lexicon list horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center text vertically */
+}
+
+#lexicon-list div {
+    font-size: 18px; /* Adjust the font size as needed */
+    margin: 2px;
+}
+
+iframe {
+    width: 100%;
+    height: 60vh; /* Adjust the height as needed */
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+
+@media (max-width: 600px) {
+    #wiktionary-frame {
+        height: 200px;
+    }
+}
