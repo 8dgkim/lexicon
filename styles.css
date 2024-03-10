@@ -1,3 +1,5 @@
+/* global */
+
 body {
     background-color: black;
     margin: 0;
@@ -9,6 +11,31 @@ body {
     font-family: "Times New Roman", Times, serif; /* Change the font to Times New Roman */
 }
 
+h1 {
+    color: white;
+    font-size: 50px;
+}
+
+h2 {
+    color: white;
+    grid-column: span 2;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    grid-column: span 2;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* index.html */
+
 .main-container {
     text-align: center;
     width: 100%;
@@ -17,15 +44,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-h1 {
-    color: white;
-    font-size: 50px;
-}
-
-h2 {
-    color: white;
 }
 
 .languages ul {
@@ -37,30 +55,23 @@ h2 {
     margin-bottom: 10px;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-}
-
-a:hover {
-    text-decoration: underline;
-}
+/* languages/ */
 
 .lexicon-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 20px;
+    /* flex-direction: column; */
     align-items: center;
+    text-align: center;
 }
-
 
 #lexicon-list {
     width: 100%;
-    max-width: 800px; /* Set a max-width if needed */
+    /* max-width: 300px; */
     max-height: calc(100vh - 100px);
     overflow-y: auto;
-    padding: 10px;
+    /* padding: 10px; */
     margin: 0 auto; /* Center the lexicon list horizontally */
     display: flex;
     flex-direction: column;
@@ -74,14 +85,26 @@ a:hover {
 
 iframe {
     width: 100%;
-    height: 60vh; /* Adjust the height as needed */
+    height: 100%;
     position: sticky;
     top: 0;
     background-color: #fff;
 }
 
+/* convert to mobile display (height >> width)  */
+
 @media (max-width: 600px) {
+    .lexicon-container {
+        display: flex;
+        flex-direction: column;
+        /* grid-template-columns: 1fr; 1-column grid for screens less than 600px */
+    }
+
     #wiktionary-frame {
         height: 65vh;
+    }
+
+    #lexicon-list {
+        max-width: none; /* Remove max-width for the left column on smaller screens */
     }
 }
