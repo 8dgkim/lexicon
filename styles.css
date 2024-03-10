@@ -82,6 +82,6 @@ iframe {
 
 @media (max-width: 600px) {
     #wiktionary-frame {
-        height: 200px;
+        height: 65vh;
     }
 }
